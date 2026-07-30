@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlanificadorAPP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-3rAnq_dtKwXFE3q2w2vvgmRrsoIMUwZwDoK764zsRg&s=10"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block align-text-top"
+            />
+            Planificador APP
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!--Primera parte-->
+      <div>
+        <!--Columnas-->
+        <div id="tarea-form">
+          <form class="row g-3 needs-validation" novalidate>
+            <!--Campo descripcion tarea-->    
+            <div class="col-md-4">
+              <label for="validationCustom01" class="form-label"
+                >Descripcion de la tarea</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="validationCustom01"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+            </div>
+           <!--Categoria-->
+           <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Categoria</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Personal</option>
+                <option>Educacion</option>
+                <option>Trabajo</option>
+                <option>Familiar</option>
+                <option>Otro</option>
+              </select>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <!--Etiqueta-->
+            <div class="col-md-3">
+              <label for="validationCustom04" class="form-label">Categoria</label>
+              <select class="form-select" id="validationCustom04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>Priorizada</option>
+                <option>Pendiente</option>
+              </select>
+              <div class="invalid-feedback">Please select a valid state.</div>
+            </div>          
+           
+           
+           
+           
+    
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

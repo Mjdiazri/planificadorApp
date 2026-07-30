@@ -39,7 +39,7 @@ La organización del proyecto, historias de usuario y seguimiento del desarrollo
 
 🔗 **Tablero Trello**
 
-https://trello.com/b/QGPC0inu/planificadorapp)](https://trello.com/b/QGPC0inu/planificadorapp
+https://trello.com/invite/b/676771855336222b51ddb59d/ATTI36f0b362634d5b78273cf6a4adf70f587322513D/planificadorapp 
 
 ---
 
