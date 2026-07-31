@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <header>
+     <header>
       <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -38,40 +38,50 @@
         <div class="row">
           <!--Contenedor priorizadas-->
           <div class="col-4">
-            <h5 class="card-title">Tareas Priorizadas</h5>
-            <!--Listado tareas priorizadas-->
-            <div>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">Hacer arroz</li>
-                <li class="list-group-item">Barrer</li>
-                <li class="list-group-item">Lavar ropa</li>
-                <li class="list-group-item">Trapear</li>
-                <li class="list-group-item">Dormir</li>
-              </ul>
+            <!--Contenedor collapse-->
+            <div id="priorizadas-cont">
+              <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+                  Tareas Priorizadas
+                </button>
+              </p>
+              <div style="min-height: 120px;">
+                <div class="collapse collapse-horizontal" id="collapseWidthExample">
+                  <div class="card card-body" style="width: 300px;">
+                    <!--Listado tareas priorizadas-->
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">Hacer arroz</li>
+                      <li class="list-group-item">Barrer</li>
+                      <li class="list-group-item">Lavar ropa</li>
+                      <li class="list-group-item">Trapear</li>
+                      <li class="list-group-item">Dormir</li>
+                    </ul>                    
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </div> 
 
 
           <!--Contenedor agregar tarea-->
           <div class="col-8">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Agregar Tarea
-                    </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <strong>This is the first item’s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                    </div>
+            <!--Contenerdor collapse-->
+            <div id="agregar-cont">
+              <p class="d-inline-flex gap-1">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Agregar tarea
+                </button>
+              </p>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    Campo para formulario <br>
+                  Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
                 </div>
-           </div>
+              </div>
+            </div>         
           </div>
+         </div> 
        
-          
-          
           
         <!--Inicio contenedor 2 equema-->
         <div class="row">
@@ -80,23 +90,26 @@
             <h5 class="card-title">Lista de tareas</h5>
             <!--Botones-->
             <div id="btn-contenedor">
-                <button type="button" class="btn btn-outline-primary">Todas las tareas</button>
-                <button type="button" class="btn btn-outline-secondary">Tareas priorizadas</button>
-                <button type="button" class="btn btn-outline-success">Tareas pendientes</button>
-                <button type="button" class="btn btn-outline-danger">Tareas vencidas</button>
-                <button type="button" class="btn btn-outline-warning">Tareas completadas</button>
-                <button type="button" class="btn btn-outline-info">Tareas proximas a vencer</button>
-                <button type="button" class="btn btn-outline-dark">Dark</button>
+              <button type="button" class="btn btn-outline-primary">Todas las tareas</button>
+              <button type="button" class="btn btn-outline-secondary">Tareas priorizadas</button>
+              <button type="button" class="btn btn-outline-success">Tareas pendientes</button>
+              <button type="button" class="btn btn-outline-danger">Tareas vencidas</button>
+              <button type="button" class="btn btn-outline-warning">Tareas completadas</button>
+              <button type="button" class="btn btn-outline-info">Tareas proximas a vencer</button>
+              <button type="button" class="btn btn-outline-dark">Dark</button>
             </div>
+            <!--Carrusel tareas-->
+            <div id="carrusel-contenedor">Carrusel tareas</div>
           </div>
         </div>
+        
+      <!--Cierre contenedor general container text-center-->  
       </div>
     </main>
-
-      <script
+    
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
   </body>
 </html>
