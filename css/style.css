@@ -53,3 +53,36 @@
 h1{
     color: beige
 }
+
+/*ESTILO TARJETAS TAREAS */
+/*contenedor titulo*/
+.head-litado-tareas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 4vh;
+    margin-bottom: 13vh;
+}
+
+
+/*Contenedor card*/
+.contenedor-lista{
+    padding: 13px;
+}
+
+.card-design{
+    border: black 2px solid;
+    border-radius: 30px;;    
+}
+
+.contenedor-img-texto{
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-texto-card{
+    text-align: left;
+
+}
