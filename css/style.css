@@ -84,5 +84,38 @@ h1{
 
 .contenedor-texto-card{
     text-align: left;
+    padding-bottom: 4px;
+
 
 }
+
+/*Font style*/
+.parrafo-card-title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.parrafo-card-texto, .parrafo-card-fecha{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.parrafo-card-estado{
+    display: inline-block;
+    padding: 1px 10px 1px;
+    background: red;
+    border-radius: 6px;;
+
+}
+
+/*Contenedor botones lista de tareas */
+.contenedor-padre-btn-lista, #btn-contenedor-lista {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
