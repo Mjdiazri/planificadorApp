@@ -11,10 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"/>
+    
   </head>
   <body>
      <header>
-      <nav class="navbar bg-body-tertiary p-0" id="planificador-nav">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-0" id="planificador-nav">
         <div class="container-fluid container-nav">
           <a class="navbar-brand" href="./index.html">
             <img
@@ -107,13 +109,39 @@
               <button type="button" class="btn btn-outline-info">Tareas proximas a vencer</button>
               <button type="button" class="btn btn-outline-dark">Dark</button>
             </div>
-            <!--Carrusel tareas-->
-            <div id="carrusel-contenedor">Carrusel tareas</div>
           </div>
         </div>
-        
-      <!--Cierre contenedor general container text-center-->  
-      </div>
+      <!--Inicio contenedor lista tareas-->
+        <div class="container text-center contenedor-lista">
+          <!--Item 1-->
+          <div class="row">
+            <!--columna card tarea-->
+            <div class="col-8">
+              <!--Columna card imagen y texto-->
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJ62TX1SxtAkh7gBM0C_SZobLVQATy5LHnFkoIOfF9A&s=10" class="img-fluid rounded-start w-50" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Parcial de modelos de simulacion</h5>
+                    <p class="card-text">Examen unidad 5: flexsim y metodologia de diseno de modelos de simulaicon</p>                    
+                    <p class="card-text"><small class="text-body-secondary">09-09-2026</small></p>
+                    <p class="card-text"><small class="text-body-secondary">Pendiente</small></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--columna card tarea-->
+            <div class="col-4">
+              <!--Contenedor botones-->
+              <div id="btn-contenedor">
+                <button type="button" class="btn btn-outline-secundary">DONE</button>
+                <button type="button" class="btn btn-outline-secondary">ELIMINAR</button>
+              </div>  
+            </div>
+          </div>
+        </div>
     </main>
     
     <script
