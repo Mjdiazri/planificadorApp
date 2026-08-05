@@ -55,6 +55,12 @@ h1{
 }
 
 /*ESTILO TARJETAS TAREAS */
+/*Contenedor general lista de tareas */
+.contenedor-seccion-lista{
+    width: 100%;
+    height: auto;
+}
+
 /*contenedor titulo*/
 .head-litado-tareas{
     display: flex;
@@ -66,6 +72,8 @@ h1{
     margin-bottom: 13vh;
 }
 
+/*Contenedor de la lista de tareas */
+
 
 /*Contenedor card*/
 .contenedor-lista{
@@ -74,7 +82,8 @@ h1{
 
 .card-design{
     border: black 2px solid;
-    border-radius: 30px;;    
+    border-radius: 30px;
+    margin-bottom: 12px;  
 }
 
 .contenedor-img-texto{
@@ -102,10 +111,22 @@ h1{
     font-size: 13px;
 }
 
-.parrafo-card-estado{
+.pendiente-task{
+    font-size: 13px;
+    font-weight: 400;
     display: inline-block;
     padding: 1px 10px 1px;
     background: red;
+    border-radius: 6px;
+
+}
+
+.done-task{
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 1px 10px 1px;
+    background: purple;
     border-radius: 6px;;
 
 }
@@ -113,9 +134,13 @@ h1{
 /*Contenedor botones lista de tareas */
 .contenedor-padre-btn-lista, #btn-contenedor-lista {
     display: flex;
-    justify-items: center;
+    justify-content: flex-end;
     align-items: center;
-    padding: 0;
-    margin: 0;
+    padding: 12px;
+    gap: 3px;
+}
+
+.btn-card-lista{
+    width: 52px;
 }
 
