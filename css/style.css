@@ -8,51 +8,60 @@
 
 .container-nav{
     padding: 0;
-    height: 4em;
-    background: #2a0b22;
-
+    min-height: 4em;
+background: #12000e;
 }
 
-.navbar-nav{
-    padding-right: 50px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    gap: 1em;
+.nav-enlace{
+    color: rgb(189, 126, 182);
 }
 
-.enlace-nav{
-    color: beige;
+.navbar-nav {
+--bs-nav-link-color: bisque; 
+--bs-nav-link-hover-color: bisque;
+}
+
+#boton-responsive-navbar{
+    border-color:bisque;
+}
+
+#icono-responsive-navbar{
+    filter: brightness(1) invert(10); 
+    height: 40px; 
 }
 
 #logo-nav{
     height: 45px;
     width: auto;
     padding: 1px 16px;
+    border-radius: 300px;
 }
 
 
-
-
-
-
 /*BODY*/
+    /*Hero*/
+
 .hero-plan{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #2A0B22;
-    background: radial-gradient(circle,rgba(42, 11, 34, 1) 19%, rgba(255, 255, 255, 1) 86%);
-    padding: 2em;
-    
+    background: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/fondo2.png');      
+    padding: 1rem;; 
 }
 
 h1{
-    color: beige
+    color: bisque;
 }
+
+.img-hero{
+    border-radius: 800px;
+}
+
+
+
+
 
 /*ESTILO TARJETAS TAREAS */
 /*Contenedor general lista de tareas */
@@ -71,6 +80,8 @@ h1{
     gap: 4vh;
     margin-bottom: 13vh;
 }
+
+
 
 /*Contenedor de la lista de tareas */
 
