@@ -7,7 +7,7 @@
 /*NAVBAR*/
 
 .container-nav{
-    padding: 0;
+    padding-right:20px;
     min-height: 4em;
 background: #12000e;
 }
@@ -67,8 +67,8 @@ h1{
     justify-items: center;
 }
 
+    /*Tareas priorizadas*/
 #priorizadas-cont{
-    border: solid 2px red;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,18 +76,40 @@ h1{
 }
 
 .contenedor-desplegable-priorizadas{
-    border: solid 2px blue;
-    text-align: justify;
+    min-width: none;
+    text-align: left;
+    padding: 0px;
 }
-
-
 
 .boton-collapse{
     background-image: url(../img/fondo2.png);
     background-position:51% 0%;
     border: 2px solid rgb(189, 126, 182);
     width: 160px;
+    color: beige;
 }
+
+.boton-collapse:hover{
+    border: 2px solid rgb(225, 12, 201);
+}
+
+.item-priorizada{
+    gap: 30px;
+}
+
+.div-btn-priorizada{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.btn-priorizadas-list{
+    font-size: 0.5rem;
+    color: purple;
+    padding: 0.25rem 0.5rem; 
+}
+
+
 
 
 

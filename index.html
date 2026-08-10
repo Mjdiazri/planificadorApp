@@ -62,7 +62,7 @@
           <!-- Tareas priorizadas -->
           <div class="col-lg-5">
             <!-- Contenedor collapse -->
-            <div id="priorizadas-cont">
+            <div id="priorizadas-cont" class="w-100">
               <p>
                 <button
                   class="btn btn-primary boton-collapse"
@@ -76,15 +76,42 @@
                 </button>
               </p>
                 <!--Contenedor desplegable-->
-                <div class="collapse" id="collapseWidthExample">
-                  <div class="card card-body contenedor-desplegable-priorizadas">
+                <div class="collapse div-desplegable" id="collapseWidthExample">
+                  <div class="card card-body contenedor-desplegable-priorizadas w-100">
                     <!-- Listado tareas priorizadas -->
-                    <ul class="list-group list-group-flush">
-                      <li class="list-group-item">Hacer arroz</li>
-                      <li class="list-group-item">Parcial de modelos de simulacion</li>
-                      <li class="list-group-item">Lavar ropa</li>
-                      <li class="list-group-item">Trapear</li>
-                      <li class="list-group-item">Dormir</li>
+                    <ul class="list-group lista-priorizadas">
+                      <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada">
+                         Hacer modelo de simulacion en flexsim 
+                         <div class="div-btn-priorizada">
+                          <button type="button" class="btn btn-outline-success btn-priorizadas-list"> ✔ </button>
+                          <button type="button" class="btn btn-outline-danger btn-priorizadas-list">
+                          ❌</button>
+                         </div>                                                                     
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada">
+                         Organizar viaje fin de semana 
+                         <div class="div-btn-priorizada">
+                          <button type="button" class="btn btn-outline-success btn-priorizadas-list"> ✔ </button>
+                          <button type="button" class="btn btn-outline-danger btn-priorizadas-list">
+                          ❌</button>
+                         </div>                                                                     
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada">
+                         Ir a clase de canotaje 
+                         <div class="div-btn-priorizada">
+                          <button type="button" class="btn btn-outline-success btn-priorizadas-list"> ✔ </button>
+                          <button type="button" class="btn btn-outline-danger btn-priorizadas-list">
+                          ❌ </button>
+                         </div>                                                                     
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada">
+                         Hacer arroz 
+                         <div class="div-btn-priorizada">
+                          <button type="button" class="btn btn-outline-success btn-priorizadas-list"> ✔ </button>
+                          <button type="button" class="btn btn-outline-danger btn-priorizadas-list">
+                          ❌</button>
+                         </div>                                                                     
+                      </li>
                     </ul>
                   </div>
                 </div>    
