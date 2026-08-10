@@ -54,20 +54,18 @@
         <img class="img-fluid img-hero" src="./img/logo-trs.png" />
       </div>
 
-      <!-- Inicio contenedores esquema -->
-      <div class="container text-center">
-
+  <!-- Inicio Estructura Principal -->
+      <div class=" container-fluid container text-center">
         <!-- Inicio contenedor 1 esquema -->
-        <div class="row">
+        <div class="row div-columnas-collapse my-4">
 
-          <!-- Contenedor priorizadas -->
-          <div class="col-4">
-
+          <!-- Tareas priorizadas -->
+          <div class="col-md-6">
             <!-- Contenedor collapse -->
             <div id="priorizadas-cont">
               <p>
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-primary boton-collapse"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseWidthExample"
@@ -78,13 +76,11 @@
                 </button>
               </p>
 
-              <div style="min-height: 120px;">
                 <div
                   class="collapse collapse-horizontal"
                   id="collapseWidthExample"
                 >
                   <div class="card card-body" style="width: 300px;">
-
                     <!-- Listado tareas priorizadas -->
                     <ul class="list-group list-group-flush">
                       <li class="list-group-item">Hacer arroz</li>
@@ -93,22 +89,19 @@
                       <li class="list-group-item">Trapear</li>
                       <li class="list-group-item">Dormir</li>
                     </ul>
-
                   </div>
-                </div>
-              </div>
+                </div>    
             </div>
-
           </div>
 
           <!-- Contenedor agregar tarea -->
-          <div class="col-8">
+          <div class="col-md-6">
 
             <!-- Contenedor collapse -->
             <div id="agregar-cont">
               <p class="d-inline-flex gap-1">
                 <button
-                  class="btn btn-primary"
+                  class="btn btn-primary boton-collapse"
                   type="button"
                   data-bs-toggle="collapse"
                   data-bs-target="#collapseExample"

@@ -58,7 +58,22 @@ h1{
 .img-hero{
     border-radius: 800px;
 }
+ 
 
+    /*Estructura Principal collapse*/
+.div-columnas-collapse{
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+}
+
+
+
+.boton-collapse{
+    background-image: url(../img/fondo2.png);
+    border: 2px solid rgb(189, 126, 182);
+    width: 160px;
+}
 
 
 
