@@ -81,7 +81,7 @@ h1{
     padding: 0px;
 }
 
-.boton-collapse{
+.boton-collapse, .btn-form{
     background-image: url(../img/fondo2.png);
     background-position:51% 0%;
     border: 2px solid rgb(189, 126, 182);
@@ -89,8 +89,8 @@ h1{
     color: beige;
 }
 
-.boton-collapse:hover{
-    border: 2px solid rgb(225, 12, 201);
+.boton-collapse:hover, .btn-form:hover{
+    border: 2px solid rgb(2, 9, 73);
 }
 
 .item-priorizada{
@@ -104,11 +104,24 @@ h1{
 }
 
 .btn-priorizadas-list{
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     color: purple;
     padding: 0.25rem 0.5rem; 
 }
 
+    /*Formulario*/
+#inputTitle, #inputPriorizar, #inputCategoria, #inputFecha, #inputDescription{
+    border: 1px purple solid;
+}
+
+.form-control:focus, .form-check-input:focus, .form-select:focus{
+    box-shadow: 0 0 0 .25rem  rgba(46, 3, 75, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: purple;
+    
+}
 
 
 
