@@ -67,10 +67,24 @@ h1{
     justify-items: center;
 }
 
+#priorizadas-cont{
+    border: solid 2px red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-desplegable-priorizadas{
+    border: solid 2px blue;
+    text-align: justify;
+}
+
 
 
 .boton-collapse{
     background-image: url(../img/fondo2.png);
+    background-position:51% 0%;
     border: 2px solid rgb(189, 126, 182);
     width: 160px;
 }
