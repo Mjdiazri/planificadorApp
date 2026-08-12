@@ -43,6 +43,12 @@ https://trello.com/invite/b/676771855336222b51ddb59d/ATTI36f0b362634d5b78273cf6a
 
 ---
 
+## 🔗 Demo 
+
+https://mjdiazri.github.io/planificadorApp/ 
+
+---
+
 ## 👩‍💻 Autora
 
 **Mónica Jazmín Díaz Riveros**
