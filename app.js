@@ -30,25 +30,20 @@
     //Funcion validar categoria 
     function validarCategoria(){
         let campoValue = userCategoria.value.trim();
-        if(campoValue !== "Seleccionar..."){
-            return true;
-        } else{
-            return false;
-        }            
+        return campoValue !== "Seleccionar..." ? true : false;         
     }
 
-    function limpiarDatos(){
-
-    }
 
 //Agregar funcionalidad al boton
 formulario.addEventListener('submit', function(event){
     event.preventDefault(); 
 
     let estadoTitulo = validarCampo(userTitulo);
+    console.log(estadoTitulo)
     let estadoDescripcion = validarCampo(userDescripcion);
     let estadoFecha = validarCampo(userFecha)
     let estadoCategoria = validarCategoria();
+    console.log(estadoCategoria)
 
     if(!estadoTitulo || !estadoDescripcion || ! estadoFecha || !estadoCategoria){
         Swal.fire({
