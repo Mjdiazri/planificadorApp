@@ -45,6 +45,12 @@
 
     }
 
+    //Funcion quitar clases
+    function quitarClase(input){
+        input.classList.remove('errorClass');
+        input.classList.remove('okClass');
+    }
+
 
 //Agregar funcionalidad al boton
 formulario.addEventListener('submit', function(event){
@@ -53,8 +59,11 @@ formulario.addEventListener('submit', function(event){
     let estadoTitulo = validarCampo(userTitulo);
     agregarClase(estadoTitulo, userTitulo);
     let estadoDescripcion = validarCampo(userDescripcion);
-    let estadoFecha = validarCampo(userFecha)
+    agregarClase(estadoDescripcion, userDescripcion);
+    let estadoFecha = validarCampo(userFecha);
+    agregarClase(estadoFecha, userFecha);
     let estadoCategoria = validarCategoria();
+    agregarClase(estadoCategoria, userCategoria);
     console.log(estadoCategoria)
 
     if(!estadoTitulo || !estadoDescripcion || ! estadoFecha || !estadoCategoria){
@@ -69,7 +78,11 @@ formulario.addEventListener('submit', function(event){
             icon: "success",
             draggable: true
         });  
-        formulario.reset()     
+        formulario.reset(); 
+        quitarClase(userTitulo);
+        quitarClase(userDescripcion);
+        quitarClase(userFecha);
+        quitarClase(userCategoria)
     }
 })
 
