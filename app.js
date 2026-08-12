@@ -57,16 +57,19 @@ formulario.addEventListener('submit', function(event){
     event.preventDefault(); 
 
     let estadoTitulo = validarCampo(userTitulo);
+    console.log(userTitulo.value);
     agregarClase(estadoTitulo, userTitulo);
     let estadoDescripcion = validarCampo(userDescripcion);
+    console.log(userDescripcion.value);
     agregarClase(estadoDescripcion, userDescripcion);
     let estadoFecha = validarCampo(userFecha);
+    console.log(userFecha.value);
     agregarClase(estadoFecha, userFecha);
     let estadoCategoria = validarCategoria();
     agregarClase(estadoCategoria, userCategoria);
-    console.log(estadoCategoria);
+    console.log(userCategoria.value);
     let estadoPriorizada = userPriorizacion.checked;
-    console.log(estadoPriorizada);
+    console.log(userPriorizacion.value);
     
 
     if(!estadoTitulo || !estadoDescripcion || ! estadoFecha || !estadoCategoria){
