@@ -64,7 +64,10 @@ formulario.addEventListener('submit', function(event){
     agregarClase(estadoFecha, userFecha);
     let estadoCategoria = validarCategoria();
     agregarClase(estadoCategoria, userCategoria);
-    console.log(estadoCategoria)
+    console.log(estadoCategoria);
+    let estadoPriorizada = userPriorizacion.checked;
+    console.log(estadoPriorizada);
+    
 
     if(!estadoTitulo || !estadoDescripcion || ! estadoFecha || !estadoCategoria){
         Swal.fire({
