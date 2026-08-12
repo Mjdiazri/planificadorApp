@@ -123,6 +123,16 @@ h1{
     
 }
 
+/*Clases validacion formulario*/
+.errorClass{
+    box-shadow: 0 0 0 .25rem  red;
+}
+
+.okClass{
+    box-shadow: 0 0 0 .25rem  green;
+}
+
+
 
 
 

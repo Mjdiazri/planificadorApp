@@ -33,13 +33,25 @@
         return campoValue !== "Seleccionar..." ? true : false;         
     }
 
+    //Funcion agregar clases
+    function agregarClase(estado, input){
+        if(estado){
+            input.classList.add('okClass');
+            input.classList.remove('errorClass');
+        } else {
+            input.classList.add('errorClass');
+            input.classList.remove('okClass');
+        }
+
+    }
+
 
 //Agregar funcionalidad al boton
 formulario.addEventListener('submit', function(event){
     event.preventDefault(); 
 
     let estadoTitulo = validarCampo(userTitulo);
-    console.log(estadoTitulo)
+    agregarClase(estadoTitulo, userTitulo);
     let estadoDescripcion = validarCampo(userDescripcion);
     let estadoFecha = validarCampo(userFecha)
     let estadoCategoria = validarCategoria();
@@ -49,7 +61,7 @@ formulario.addEventListener('submit', function(event){
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "Verifica los datos, algunos no estan correctos"
+            text: "Por favor verifica los datos ingresados"
         });
     } else {
         Swal.fire({
