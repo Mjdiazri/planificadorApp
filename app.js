@@ -11,6 +11,8 @@
     //Regex validacion
     const regexTexto = /^[a-z0-9ñáéíóúüÁÉÍÓÚÜ¿?¡!.,:;()'"_\s-]{5,}$/i;
     //Variables globales
+    const inputs = [userTitulo, userFecha, userDescripcion];
+    const estados = [];
 
 
 //Funciones
@@ -18,13 +20,7 @@
     //Funcion validar campos
     function validarCampo(input){
         let campoValue = input.value.trim();
-        if(campoValue){
-            if(regexTexto.test(campoValue)){
-                return true;
-            }
-        } else{
-            return false;
-        }
+        return campoValue !== "" && regexTexto.test(campoValue) ? true: false;
     }
 
     //Funcion validar categoria 
@@ -34,16 +30,15 @@
     }
 
     //Funcion agregar clases
-    function agregarClase(estado, input){
-        if(estado){
-            input.classList.add('okClass');
-            input.classList.remove('errorClass');
-        } else {
-            input.classList.add('errorClass');
-            input.classList.remove('okClass');
-        }
+    function agregarClaseOk(input){
+        input.classList.add('okClass');
+        input.classList.remove('errorClass');
+    } 
 
-    }
+    function agregarClaseError(input){
+        input.classList.add('errorClass');
+        input.classList.remove('okClass');
+    }   
 
     //Funcion quitar clases
     function quitarClase(input){
@@ -56,39 +51,49 @@
 formulario.addEventListener('submit', function(event){
     event.preventDefault(); 
 
-    let estadoTitulo = validarCampo(userTitulo);
-    console.log(userTitulo.value);
-    agregarClase(estadoTitulo, userTitulo);
-    let estadoDescripcion = validarCampo(userDescripcion);
-    console.log(userDescripcion.value);
-    agregarClase(estadoDescripcion, userDescripcion);
-    let estadoFecha = validarCampo(userFecha);
-    console.log(userFecha.value);
-    agregarClase(estadoFecha, userFecha);
-    let estadoCategoria = validarCategoria();
-    agregarClase(estadoCategoria, userCategoria);
-    console.log(userCategoria.value);
-    let estadoPriorizada = userPriorizacion.checked;
-    console.log(userPriorizacion.value);
-    
+    estados.length= 0;
 
-    if(!estadoTitulo || !estadoDescripcion || ! estadoFecha || !estadoCategoria){
-        Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Por favor verifica los datos ingresados"
-        });
-    } else {
+    //Variables generales
+    for (let i = 0; i < inputs.length; i++) {
+        let estadoVariable = validarCampo(inputs[i]);
+         estados.push(estadoVariable);
+          console.log(inputs[i].value)
+        if(estadoVariable){
+            agregarClaseOk(inputs[i])
+        } else {
+            agregarClaseError(inputs[i])
+        }
+    }
+
+    //Categoria
+    let estadoCategoria = validarCategoria();
+    estados.push(estadoCategoria);
+    console.log(userCategoria.value);
+    estadoCategoria ? agregarClaseOk(userCategoria) : agregarClaseError(userCategoria);
+
+    
+    //Check priorizacion
+    let estadoPriorizada = userPriorizacion.checked;
+    console.log(estadoPriorizada);
+
+    //alertas
+    if(estados.every(e => e === true)){
         Swal.fire({
             title: "Datos enviados!",
             icon: "success",
             draggable: true
         });  
         formulario.reset(); 
-        quitarClase(userTitulo);
-        quitarClase(userDescripcion);
-        quitarClase(userFecha);
-        quitarClase(userCategoria)
+        for (let i = 0; i < inputs.length; i++) {
+            quitarClase(inputs[i])     
+            quitarClase(userCategoria)     
+        }      
+    } else {
+         Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Por favor verifica los datos ingresados"
+        });
     }
 })
 
