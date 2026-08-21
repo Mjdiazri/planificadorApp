@@ -1,3 +1,4 @@
+//FORMULARIO
 //Validacion formulario
 
     //Captura de campos
@@ -96,4 +97,11 @@ formulario.addEventListener('submit', function(event){
         });
     }
 })
+
+
+//TASKMANAGER.JS
+//Validar enlace con archivo
+const taskManager = new TaskManager();
+console.log(taskManager.task);
+
 
