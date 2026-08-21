@@ -246,6 +246,21 @@ h1{
         color: #12000e87;
     }
 
+    .fa-calendar-check, .fa-trash{
+        color: #12000e;
+    }
+
+    .btn-card-lista-done, .btn-card-lista-pendiente{
+         border:#12000e solid 1px;  
+    }
+
+    .btn-card-lista-done:hover, .btn-card-lista-pendiente:hover{
+        background-color: #12000e;
+
+        .fa-calendar-check, .fa-trash {
+            color: #f3f1f3;  
+        }
+    }
     
 
 }

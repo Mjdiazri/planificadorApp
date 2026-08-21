@@ -98,6 +98,21 @@ formulario.addEventListener('submit', function(event){
     }
 })
 
+//TARJETAS
+    
+    //Captura de campos
+    const contenedorCard = document.querySelector('.tarjeta-div-card');
+    const textoEstadoCard = document.querySelectorAll('.estado-task-small');
+    const btnDone = document.querySelectorAll('.btn-card-lista-done');
+
+    //Agregar funcionalidad al boton
+    btnDone.addEventListener('click', ()=>{
+        contenedorCard.classList.replace('pendiente-task','done-task');
+        textoEstadoCard.textContent = "Completada";
+    });
+
+
+
 
 //TASKMANAGER.JS
 //Validar enlace con archivo
