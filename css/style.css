@@ -123,7 +123,7 @@ h1{
     
 }
 
-/*Clases validacion formulario*/
+    /*Clases validacion formulario*/
 .errorClass{
     box-shadow: 0 0 0 .20rem  rgba(255, 0, 0, 0.269);
 }
@@ -138,13 +138,13 @@ h1{
 
 
 /*ESTILO TARJETAS TAREAS */
-/*Contenedor general lista de tareas */
+    /*Contenedor general lista de tareas */
 .contenedor-seccion-lista{
     width: 100%;
     height: auto;
 }
 
-/*contenedor titulo*/
+    /*contenedor titulo*/
 .head-litado-tareas{
     display: flex;
     flex-direction: column;
@@ -160,13 +160,12 @@ h1{
 /*Contenedor de la lista de tareas */
 
 
-/*Contenedor card*/
+    /*Contenedor card setting general*/
 .contenedor-lista{
     padding: 13px;
 }
 
 .card-design{
-    border: black 2px solid;
     border-radius: 30px;
     margin-bottom: 12px;  
 }
@@ -179,11 +178,10 @@ h1{
 .contenedor-texto-card{
     text-align: left;
     padding-bottom: 4px;
-
-
 }
 
-/*Font style*/
+
+    /*Font style*/
 .parrafo-card-title{
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;
@@ -196,27 +194,8 @@ h1{
     font-size: 13px;
 }
 
-.pendiente-task{
-    font-size: 13px;
-    font-weight: 400;
-    display: inline-block;
-    padding: 1px 10px 1px;
-    background: red;
-    border-radius: 6px;
 
-}
-
-.done-task{
-    font-size: 13px;
-    font-weight: 400;
-    display: inline-block;
-    padding: 1px 10px 1px;
-    background: purple;
-    border-radius: 6px;;
-
-}
-
-/*Contenedor botones lista de tareas */
+    /*Contenedor botones lista de tareas */
 .contenedor-padre-btn-lista, #btn-contenedor-lista {
     display: flex;
     justify-content: flex-end;
@@ -228,4 +207,47 @@ h1{
 .btn-card-lista{
     width: 52px;
 }
+
+/* Clases completado/pendiente tarjetas */
+        /* Completada*/
+
+.pendiente-task{
+    .card-design{
+        border: black 2px solid;
+    }
+
+    .estado-task{
+        font-size: 13px;
+        font-weight: 400;
+        display: inline-block;
+        padding: 1px 10px 1px;
+        background: red;
+        border-radius: 6px;
+    }
+
+}        
+
+.done-task{
+    .card-design{
+        border: gray 2px solid;
+        background-color: rgba(189, 126, 182, 0.144); 
+    }
+
+    .estado-task{
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+    padding: 1px 10px 1px;
+    background: purple;
+    border-radius: 6px;;
+    }
+
+    .parrafo-card-title, .parrafo-card-texto, .parrafo-card-fecha{
+        color: #12000e87;
+    }
+
+    
+
+}
+
 
