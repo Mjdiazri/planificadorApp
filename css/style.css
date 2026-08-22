@@ -9,7 +9,7 @@
 .container-nav{
     padding-right:20px;
     min-height: 4em;
-background: #12000e;
+    background: #12000e;
 }
 
 .nav-enlace{
@@ -17,12 +17,12 @@ background: #12000e;
 }
 
 .navbar-nav {
---bs-nav-link-color: bisque; 
---bs-nav-link-hover-color: bisque;
+--bs-nav-link-color: beige; 
+--bs-nav-link-hover-color: beige;
 }
 
 #boton-responsive-navbar{
-    border-color:bisque;
+    border-color:beige;
 }
 
 #icono-responsive-navbar{
@@ -52,7 +52,7 @@ background: #12000e;
 }
 
 h1{
-    color: bisque;
+    color: beige;
 }
 
 .img-hero{
@@ -159,7 +159,6 @@ h1{
 
 /*Contenedor de la lista de tareas */
 
-
     /*Contenedor card setting general*/
 .contenedor-lista{
     padding: 13px;
@@ -172,6 +171,16 @@ h1{
 
 .contenedor-img-texto{
     display: flex;
+    align-items: center;
+
+    i{
+        font-size: 50px;
+        color: black;
+    }
+}
+
+.div-image{
+    justify-content: center;
     align-items: center;
 }
 
@@ -209,11 +218,16 @@ h1{
 }
 
 /* Clases completado/pendiente tarjetas */
-        /* Completada*/
+    /* Pendiente*/
 
 .pendiente-task{
     .card-design{
         border: black 2px solid;
+        background-color: rgba(189, 126, 182, 0.151); 
+    }
+
+    .contenedor-img-texto i{
+        color:#460337;
     }
 
     .estado-task{
@@ -223,14 +237,35 @@ h1{
         padding: 1px 10px 1px;
         background: red;
         border-radius: 6px;
+
+        small{
+          color:beige !important;  
+        }
+    } 
+
+        /* Botones */
+
+    .btn-card-lista-done, .btn-card-lista-pendiente{
+         border:#460337 solid 1px;  
     }
 
-}        
+    .btn-card-lista-done:hover, .btn-card-lista-pendiente:hover{
+        background-color: #460337;
 
+        .fa-calendar-check, .fa-trash {
+            color: beige;  
+        }
+    }
+
+}  
+
+
+
+    /* Completada */
 .done-task{
     .card-design{
         border: gray 2px solid;
-        background-color: rgba(189, 126, 182, 0.144); 
+        background-color: rgba(128, 128, 128, 0.064); 
     }
 
     .estado-task{
@@ -238,31 +273,68 @@ h1{
     font-weight: 400;
     display: inline-block;
     padding: 1px 10px 1px;
-    background: purple;
-    border-radius: 6px;;
+    background: #460337;
+    border-radius: 6px;
+
+    small{
+          color: beige !important;  
+        }
     }
 
+        /* Logo card */
+    .contenedor-img-texto i{
+        color:#4603389b;
+    }
+
+        /* Texto */
     .parrafo-card-title, .parrafo-card-texto, .parrafo-card-fecha{
         color: #12000e87;
     }
 
+        /* Botones */
     .fa-calendar-check, .fa-trash{
         color: #12000e;
     }
 
     .btn-card-lista-done, .btn-card-lista-pendiente{
-         border:#12000e solid 1px;  
+         border:#460337 solid 1px;  
     }
 
     .btn-card-lista-done:hover, .btn-card-lista-pendiente:hover{
-        background-color: #12000e;
+        background-color: #460337;
 
         .fa-calendar-check, .fa-trash {
-            color: #f3f1f3;  
+            color: beige;  
         }
     }
-    
-
 }
 
+
+/* RESPONSIVE */
+    /* Tarjetas */
+
+@media (max-width: 768px){
+
+    .contenedor-lista{
+        padding: 0;
+    }
+
+    .card-design{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contenedor-img-texto{
+        padding: 15px 15px 0px; 
+    }
+
+    #btn-contenedor-lista{
+        padding:0px;
+        gap: 15px;
+    }
+
+
+}    
 

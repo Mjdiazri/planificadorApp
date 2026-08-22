@@ -99,17 +99,29 @@ formulario.addEventListener('submit', function(event){
 })
 
 //TARJETAS
-    
-    //Captura de campos
-    const contenedorCard = document.querySelector('.tarjeta-div-card');
-    const textoEstadoCard = document.querySelectorAll('.estado-task-small');
-    const btnDone = document.querySelectorAll('.btn-card-lista-done');
+
+        
+    /*
+    //Captura de botones
+    const btnsDone = document.querySelectorAll('.btn-card-lista-done');
 
     //Agregar funcionalidad al boton
-    btnDone.addEventListener('click', ()=>{
+
+
+    
+    btnsDone.forEach( btnDone =>{
+        btnDone.addEventListener('click', ()=>{
+        const contenedorCard = btnDone.closest('.tarjeta-div-card'); 
+         const textoEstadoCard = contenedorCard.querySelector('.estado-task-small');
+
         contenedorCard.classList.replace('pendiente-task','done-task');
         textoEstadoCard.textContent = "Completada";
     });
+
+    }
+
+    )*/
+    
 
 
 
