@@ -120,10 +120,11 @@ formulario.addEventListener('submit', function(event){
     if(tipo === 'done'){
         tarjeta.classList.replace('pendiente-task', 'done-task');
         estadoCard.textContent = "Completada";
-    } else if (tipo === 'eliminar'){
+    } else if (tipo === 'pendiente'){
         tarjeta.classList.replace('done-task', 'pendiente-task');
         estadoCard.textContent = "Pendiente";
-        //tarjeta.remove();
+    } else if (tipo === 'eliminar'){
+        tarjeta.remove();
     } else {
         return;
     }
