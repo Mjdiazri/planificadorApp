@@ -99,14 +99,10 @@ formulario.addEventListener('submit', function(event){
 })
 
 //TARJETAS
-
-    //Captura de botones
+//Captura de botones
     const contenedorLista = document.querySelector('.contenedor-lista');
 
-    
-
-    //Agregar funcionalidad al boton
-
+//Agregar funcionalidad al boton
    contenedorLista.addEventListener('click',(evento) => {
     const btn = evento.target.closest('button');
   
@@ -130,9 +126,10 @@ formulario.addEventListener('submit', function(event){
     }
         
    })
-        
-   
-    
+
+
+   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         
 
 

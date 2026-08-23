@@ -217,6 +217,14 @@ h1{
     width: 52px;
 }
 
+
+/* Stilo del tooltip */
+.custom-tooltip {
+  --bs-tooltip-bg: #460337;
+  --bs-tooltip-color: beige;
+  font-size: 12px;
+}
+
 /* Clases completado/pendiente tarjetas */
     /* Pendiente*/
 
@@ -257,6 +265,7 @@ h1{
 
         .fa-calendar-check, .fa-trash {
             color: beige;  
+            pointer-events: none;
         }
     }
 
@@ -305,6 +314,7 @@ h1{
 
     .fa-calendar-check, .fa-trash, .fa-trash-can-arrow-up{
         color: #12000e;
+        pointer-events: none;
     }
 
     .btn-card-lista-eliminar, .btn-card-lista-pendiente{
