@@ -100,30 +100,39 @@ formulario.addEventListener('submit', function(event){
 
 //TARJETAS
 
-        
-    /*
     //Captura de botones
-    const btnsDone = document.querySelectorAll('.btn-card-lista-done');
+    const contenedorLista = document.querySelector('.contenedor-lista');
+
+    
 
     //Agregar funcionalidad al boton
 
+   contenedorLista.addEventListener('click',(evento) => {
+    const btn = evento.target.closest('button');
+  
+    if(!btn) return;
 
-    
-    btnsDone.forEach( btnDone =>{
-        btnDone.addEventListener('click', ()=>{
-        const contenedorCard = btnDone.closest('.tarjeta-div-card'); 
-         const textoEstadoCard = contenedorCard.querySelector('.estado-task-small');
+    const tipo = btn.dataset.tipo
+    const tarjeta = btn.closest('.tarjeta-div-card');
+    const estadoCard = tarjeta.querySelector('.estado-task-small')
 
-        contenedorCard.classList.replace('pendiente-task','done-task');
-        textoEstadoCard.textContent = "Completada";
-    });
 
+    if(tipo === 'done'){
+        tarjeta.classList.replace('pendiente-task', 'done-task');
+        estadoCard.textContent = "Completada";
+    } else if (tipo === 'eliminar'){
+        tarjeta.classList.replace('done-task', 'pendiente-task');
+        estadoCard.textContent = "Pendiente";
+        //tarjeta.remove();
+    } else {
+        return;
     }
-
-    )*/
+        
+   })
+        
+   
     
-
-
+        
 
 
 //TASKMANAGER.JS
