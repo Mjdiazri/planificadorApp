@@ -245,11 +245,14 @@ h1{
 
         /* Botones */
 
-    .btn-card-lista-done, .btn-card-lista-pendiente{
+    .btn-card-lista-done, .btn-card-lista-eliminar{
          border:#460337 solid 1px;  
     }
 
-    .btn-card-lista-done:hover, .btn-card-lista-pendiente:hover{
+    .btn-card-lista-pendiente{
+        display: none;
+    }
+    .btn-card-lista-done:hover, .btn-card-lista-eliminar:hover{
         background-color: #460337;
 
         .fa-calendar-check, .fa-trash {
@@ -292,18 +295,26 @@ h1{
     }
 
         /* Botones */
-    .fa-calendar-check, .fa-trash{
+    .btn-card-lista-eliminar{
+        display: show;
+    } 
+    
+    .btn-card-lista-done{
+        display: none;
+    }
+
+    .fa-calendar-check, .fa-trash, .fa-trash-can-arrow-up{
         color: #12000e;
     }
 
-    .btn-card-lista-done, .btn-card-lista-pendiente{
+    .btn-card-lista-eliminar, .btn-card-lista-pendiente{
          border:#460337 solid 1px;  
     }
 
-    .btn-card-lista-done:hover, .btn-card-lista-pendiente:hover{
+    .btn-card-lista-eliminar:hover, .btn-card-lista-pendiente:hover{
         background-color: #460337;
 
-        .fa-calendar-check, .fa-trash {
+        .fa-calendar-check, .fa-trash, .fa-trash-can-arrow-up {
             color: beige;  
         }
     }
