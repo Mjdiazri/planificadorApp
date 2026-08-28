@@ -1,6 +1,9 @@
+//Importar  clase
+const TaskManager = require('./taskManager.js')
+
 //FORMULARIO
 //Validacion formulario
-
+/*
     //Captura de campos
     const userTitulo = document.querySelector('#inputTitle');
     const userPriorizacion = document.querySelector('#inputPriorizar');
@@ -132,10 +135,17 @@ formulario.addEventListener('submit', function(event){
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         
 
-
+*/
 //TASKMANAGER.JS
 //Validar enlace con archivo
 const taskManager = new TaskManager();
 console.log(taskManager.task);
 
+taskManager.addTask(
+    "Adelantar talleres",
+    "Adelanter taller clase JPA de agosto 28",
+    "2026-31-09",
+    "Pendiente"
+);
 
+console.log(taskManager.task)
