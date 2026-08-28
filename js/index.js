@@ -148,4 +148,13 @@ taskManager.addTask(
     "Pendiente"
 );
 
+
+taskManager.addTask(
+    "Canotaje",
+    "Llevar a la niña a practica de canotaje Simon Bolivar",
+    "2026-08-29",
+    "Pendiente"
+);
+
+
 console.log(taskManager.task)

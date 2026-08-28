@@ -10,6 +10,7 @@ class TaskManager{
         this.currentId ++;
         this.task.push(
             { 
+                id: this.currentId,
                 name : name,
                 description : description,
                 dueDate : dueDate,
