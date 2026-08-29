@@ -105,6 +105,7 @@ const taskManager = new TaskManager();
             //Task y reinicio
             nuevaTask();
             reinicioForm();
+            console.log(taskManager.task)
 
         } else {
             Swal.fire({
@@ -164,4 +165,4 @@ const taskManager = new TaskManager();
 
 
 //TASKMANAGER.JS
-console.log(taskManager.task)
+

@@ -12,7 +12,7 @@ class TaskManager{
             { 
                 id: this.currentId,
                 name : name,
-                prioritized : prioritize,
+                prioritize : prioritize,
                 description : description,
                 category : category,
                 dueDate : dueDate,
