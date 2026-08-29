@@ -11,7 +11,7 @@ const taskManager = new TaskManager();
     const userCategoria = document.querySelector('#inputCategoria');
     const userFecha = document.querySelector('#inputFecha');
     const userDescripcion = document.querySelector('#inputDescription');
-    const btnSubmit = document.querySelector('#btm-submit');
+    const btnSubmit = document.querySelector('#btn-submit');
     const formulario = document.querySelector('#form-tareas');
     //Regex validacion
     const regexTexto = /^[a-z0-9ñáéíóúüÁÉÍÓÚÜ¿?¡!.,:;()'"_\s-]{5,}$/i;
@@ -52,13 +52,14 @@ const taskManager = new TaskManager();
     }
 
 
-//Agregar funcionalidad al boton
+//Agregar funcionalidad al boton Formulario
 formulario.addEventListener('submit', function(event){
     event.preventDefault(); 
 
+    //Validacion de campos form
     estados.length= 0;
 
-    //Variables generales
+        //Variables generales
     for (let i = 0; i < inputs.length; i++) {
         let estadoVariable = validarCampo(inputs[i]);
          estados.push(estadoVariable);
@@ -70,18 +71,18 @@ formulario.addEventListener('submit', function(event){
         }
     }
 
-    //Categoria
+        //Categoria
     let estadoCategoria = validarCategoria();
     estados.push(estadoCategoria);
     console.log(userCategoria.value);
     estadoCategoria ? agregarClaseOk(userCategoria) : agregarClaseError(userCategoria);
 
     
-    //Check priorizacion
+        //Check priorizacion
     let estadoPriorizada = userPriorizacion.checked;
     console.log(estadoPriorizada);
 
-    //alertas
+        //alertas
     if(estados.every(e => e === true)){
         Swal.fire({
             title: "Datos enviados!",
