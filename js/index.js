@@ -1,10 +1,6 @@
 //INSTANCIA CLASE
 const taskManager = new TaskManager();
 
-
-//FORMULARIO
-//Validacion formulario
-
     //Captura de campos
     const userTitulo = document.querySelector('#inputTitle');
     const userPriorizacion = document.querySelector('#inputPriorizar');
@@ -13,14 +9,37 @@ const taskManager = new TaskManager();
     const userDescripcion = document.querySelector('#inputDescription');
     const btnSubmit = document.querySelector('#btn-submit');
     const formulario = document.querySelector('#form-tareas');
+    const contenedorLista = document.querySelector('.contenedor-lista');
     //Regex validacion
     const regexTexto = /^[a-z0-9ñáéíóúüÁÉÍÓÚÜ¿?¡!.,:;()'"_\s-]{5,}$/i;
     //Variables globales
     const inputs = [userTitulo, userFecha, userDescripcion];
-    const estados = [];
+
+//FORMULARIO
+
+    //Eventos Formulario
+    formulario.addEventListener('submit', function(event){
+        event.preventDefault();
+        let resultadoValidacion = verificarTodo();
+        alertaForm(resultadoValidacion);       
+    })
 
 
-//Funciones
+//TARJETAS    
+
+    //Eventos botones tarjetas
+   contenedorLista.addEventListener('click',(evento) => {
+    const btn = evento.target.closest('button');
+    if(!btn) return;
+    cambiarEstado(btn);
+   })
+
+
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+
+//FUNCIONES
 
     //Funcion validar campos
     function validarCampo(input){
@@ -51,111 +70,98 @@ const taskManager = new TaskManager();
         input.classList.remove('okClass');
     }
 
+    //Funcion verificar y agregar clases
+    function verificarTodo(){
+        const estados = [];
 
-//Agregar funcionalidad al boton Formulario
-formulario.addEventListener('submit', function(event){
-    event.preventDefault(); 
+        //Verificar variables generales
+        for (let i = 0; i < inputs.length; i++) {
+            let estadoVariable = validarCampo(inputs[i]);
+            estados.push(estadoVariable);
+            if(estadoVariable){
+                agregarClaseOk(inputs[i])
+            } else {
+                agregarClaseError(inputs[i])
+            }
+        }
 
-    //Validacion de campos form
-    estados.length= 0;
+        // Verificar Categoria
+        let estadoCategoria = validarCategoria();
+        estados.push(estadoCategoria);
+        estadoCategoria ? agregarClaseOk(userCategoria) : agregarClaseError(userCategoria);
 
-        //Variables generales
-    for (let i = 0; i < inputs.length; i++) {
-        let estadoVariable = validarCampo(inputs[i]);
-         estados.push(estadoVariable);
-          console.log(inputs[i].value)
-        if(estadoVariable){
-            agregarClaseOk(inputs[i])
+        return estados;
+    }
+
+    //Funcion alertas formulario
+    function alertaForm(estados){
+         if(estados.every(e => e === true)){
+            Swal.fire({
+                title: "Datos enviados!",
+                icon: "success",
+                draggable: true
+            });  
+
+            //Task y reinicio
+            nuevaTask();
+            reinicioForm();
+
         } else {
-            agregarClaseError(inputs[i])
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Por favor verifica los datos ingresados"
+            });
         }
     }
 
-        //Categoria
-    let estadoCategoria = validarCategoria();
-    estados.push(estadoCategoria);
-    console.log(userCategoria.value);
-    estadoCategoria ? agregarClaseOk(userCategoria) : agregarClaseError(userCategoria);
-
-    
-        //Check priorizacion
-    let estadoPriorizada = userPriorizacion.checked;
-    console.log(estadoPriorizada);
-
-        //alertas
-    if(estados.every(e => e === true)){
-        Swal.fire({
-            title: "Datos enviados!",
-            icon: "success",
-            draggable: true
-        });  
-        formulario.reset(); 
+    //Funcion reiniciar Formulario
+    function reinicioForm(){
+        formulario.reset();
+        quitarClase(userCategoria) 
         for (let i = 0; i < inputs.length; i++) {
             quitarClase(inputs[i])     
-            quitarClase(userCategoria)     
-        }      
-    } else {
-         Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Por favor verifica los datos ingresados"
-        });
+        }     
     }
-})
 
-//TARJETAS
-//Captura de botones
-    const contenedorLista = document.querySelector('.contenedor-lista');
+    
+    //Funcion crear Taskmanager
+    function nuevaTask(){
+        let name = userTitulo.value;
+        let prioritize = userPriorizacion.checked;
+        let category = userCategoria.value;
+        let dueDate = userFecha.value;
+        let description = userDescripcion.value;
 
-//Agregar funcionalidad al boton
-   contenedorLista.addEventListener('click',(evento) => {
-    const btn = evento.target.closest('button');
-  
-    if(!btn) return;
+        taskManager.addTask(name, prioritize, category, description, dueDate, "Pendiente");
+    }    
 
-    const tipo = btn.dataset.tipo
-    const tarjeta = btn.closest('.tarjeta-div-card');
-    const estadoCard = tarjeta.querySelector('.estado-task-small')
+    //Funcion cambio estado tarjeta
+    function cambiarEstado(btn){
 
+        const tipo = btn.dataset.tipo
+        const tarjeta = btn.closest('.tarjeta-div-card');
+        const estadoCard = tarjeta.querySelector('.estado-task-small')
 
-    if(tipo === 'done'){
-        tarjeta.classList.replace('pendiente-task', 'done-task');
-        estadoCard.textContent = "Completada";
-    } else if (tipo === 'pendiente'){
-        tarjeta.classList.replace('done-task', 'pendiente-task');
-        estadoCard.textContent = "Pendiente";
-    } else if (tipo === 'eliminar'){
-        tarjeta.remove();
-    } else {
-        return;
+        switch(tipo){
+            case 'done':
+                tarjeta.classList.replace('pendiente-task', 'done-task');
+                estadoCard.textContent = "Completada";
+                break;
+            case 'pendiente':
+                tarjeta.classList.replace('done-task', 'pendiente-task');
+                estadoCard.textContent = "Pendiente";
+                break;
+            case "eliminar":
+                tarjeta.remove();
+                break;
+            default:
+                return;
+        }
+        
     }
-        
-   })
 
-
-   const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-        
 
 
 //TASKMANAGER.JS
-//Agregar tareas
-console.log(taskManager.task);
-
-taskManager.addTask(
-    "Adelantar talleres",
-    "Adelanter taller clase JPA de agosto 28",
-    "2026-31-09",
-    "Pendiente"
-);
-
-
-taskManager.addTask(
-    "Canotaje",
-    "Llevar a la niña a practica de canotaje Simon Bolivar",
-    "2026-08-29",
-    "Pendiente"
-);
-
-
 console.log(taskManager.task)

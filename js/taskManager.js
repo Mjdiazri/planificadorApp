@@ -6,13 +6,15 @@ class TaskManager{
     }
 
     //Metodo
-    addTask(name, description, dueDate, status) {
+    addTask(name, prioritize, category, description, dueDate, status) {
         this.currentId ++;
         this.task.push(
             { 
                 id: this.currentId,
                 name : name,
+                prioritized : prioritize,
                 description : description,
+                category : category,
                 dueDate : dueDate,
                 status : status
             }
