@@ -18,7 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
     />
-    <link rel="icon" type="image/png" href="./img/logo-trs.png">
+    <link rel="icon" type="image/png" href="./img/logo.png">
   </head>
 
   <body>
@@ -61,7 +61,7 @@
         <div class="row div-columnas-collapse my-4">
 
           <!-- Tareas priorizadas -->
-          <div class="col-lg-5 my-2">
+          <div class="col-lg-6 my-2">
             <!-- Contenedor collapse -->
             <div id="priorizadas-cont" class="w-100" >
               <p>                    
@@ -69,16 +69,16 @@
                     class="btn btn-primary boton-collapse"
                     type="button"
                     data-bs-toggle="collapse"
-                    data-bs-target="#collapseWidthExample"
+                    data-bs-target="#collapseTareasPriorizadas"
                       aria-expanded="false"
-                    aria-controls="collapseWidthExample"
+                    aria-controls="collapseTareasPriorizadas"
                   >
                     Tareas Priorizadas
                 </button>
               </p>
                 <!--Contenedor desplegable-->
-                <div class="collapse div-desplegable" id="collapseWidthExample">
-                  <div class="card card-body contenedor-desplegable-priorizadas w-100">
+                <div class="collapse div-desplegable" id="collapseTareasPriorizadas">
+                  <div class="card card-body contenedor-desplegable-priorizadas">
                     <!-- Listado tareas priorizadas -->
                     <ul class="list-group lista-priorizadas">
                       <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada">
@@ -120,7 +120,7 @@
           </div>
 
           <!-- Contenedor agregar tarea -->
-          <div class="col-lg-7 my-2">
+          <div class="col-lg-6 my-2">
 
             <!-- Contenedor collapse -->
             <div id="agregar-cont">
@@ -129,19 +129,19 @@
                   class="btn btn-primary boton-collapse"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target="#collapseExample"
+                  data-bs-target="#collapseFormulario"
                   aria-expanded="false"
-                  aria-controls="collapseExample"
+                  aria-controls="collapseFormulario"
                 >
                   Agregar tarea
                 </button>
               </p>
               <!--Formulario-->
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
+              <div class="collapse div-collapse-form" id="collapseFormulario">
+                <div class="card card-body div-form">
                   <form class="form-floating" id="form-tareas">
                     <!--Primer fila-->
-                    <div class="row g-2 mb-2">
+                    <div class="row g-2 mb-3">
                       <!--Titulo-->
                       <div class="col-md-8">
                         <div class="form-floating">
@@ -158,7 +158,7 @@
                       </div>
                     </div>                    
                     <!--Segunda fila-->
-                    <div class="row g-2 mb-2">
+                    <div class="row g-2 mb-3">
                       <!--Categoria-->
                       <div class="col-md">
                         <div class="form-floating">
@@ -182,7 +182,7 @@
                       </div>
                     </div> 
                     <!--Descripcion-->
-                    <div class="col mb g-2 mb-2">
+                    <div class="col mb g-2 mb-3">
                       <div class="form-floating">
                         <textarea class="form-control" aria-label="With textarea" id="inputDescription" placeholder=" "></textarea>
                         <label for="inputDescription">Descripcion de la tarea</label>
@@ -201,15 +201,24 @@
         </div>
       </div>
 
-      <!-- Inicio contenedor 2 esquema -->
-      <div class="container-sm contenedor-seccion-lista"> 
-        <div class="row">
-
-          <!-- Contenedor mostrar tareas -->
-          <div class="col-12 head-litado-tareas text-center">
-            <h5 class="card-title">Lista de tareas</h5>
-
-            <!-- Botones -->
+      <!-- Inicio contenedor pivote 2 esquema -->
+      <div class=" container-fluid text-center contenedor-seccion2"> <!--Contenedor externo-->
+        <div><!--Contendor interno-->
+          <p class="d-inline-flex gap-1">
+            <button
+              class="btn btn-primary boton-collapse"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseListaTareas"
+              aria-expanded="false"
+              aria-controls="collapseListaTarease"
+            >
+              Lista de Tareas
+            </button>
+          </p>
+          <div class="collapse" id="collapseListaTareas">
+            <div class="card card-body tareasList-div">
+              <!-- Botones -->
             <div id="btn-contenedor">
               <button
                 type="button"
@@ -252,12 +261,8 @@
               >
                 proximas a vencer
               </button>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- Inicio contenedor lista tareas -->
+            </div> <!--Cierre botones-->
+            <!-- Inicio contenedor lista tareas -->
         <div class="text-center contenedor-lista">
 
           <!-- Item 1 -->
@@ -683,8 +688,12 @@
             </div>
           </div> <!--Cierre done-task-->           
           </div>
-        </div>
-      </div> 
+        </div><!--Cierre contenedor lista-->
+            </div>
+          </div>
+
+        </div><!--Cierre contendor interno-->
+       </div><!--Cierre contenedor externo-->
     </main>
 
     <script

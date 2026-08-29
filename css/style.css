@@ -39,6 +39,10 @@
 
 
 /*BODY*/
+
+body{
+    background: url(../img/fondo_body.png);
+}
     /*Hero*/
 
 .hero-plan{
@@ -49,6 +53,7 @@
     background: #ffffff;
     background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/fondo2.png');      
     padding: 1rem;; 
+    border-bottom: 0.1px dotted beige;
 }
 
 h1{
@@ -75,22 +80,42 @@ h1{
     align-items: center;
 }
 
-.contenedor-desplegable-priorizadas{
-    min-width: none;
-    text-align: left;
-    padding: 0px;
+.div-desplegable, .div-collapse-form{
+    border: solid 1px beige;
+    background-color: #12000e;
+    border-radius:6px;
 }
 
-.boton-collapse, .btn-form{
-    background-image: url(../img/fondo2.png);
+.contenedor-desplegable-priorizadas, .div-form{
+    margin: 6px;
+    border: solid 2px rgba(189, 126, 182, 1);
+    border-radius:6px;
+}
+
+.lista-priorizadas{
+    border: solid 2px rgba(189, 126, 182, 1);
+    border-radius:6px;
+}
+
+.btn-primary, .btn-form{
+    background: rgb(245, 245, 241);
     background-position:51% 0%;
     border: 2px solid rgb(189, 126, 182);
     width: 160px;
-    color: beige;
+    color: purple;
+    font-weight: 500;
 }
 
-.boton-collapse:hover, .btn-form:hover{
-    border: 2px solid rgb(2, 9, 73);
+.btn-primary:hover, .btn-form:hover, #btn-submit{
+    background: #BD7EB6;
+    background: linear-gradient(83deg,rgba(189, 126, 182, 1) 19%, rgba(85, 97, 207, 1) 84%);
+    border: 1px solid rgb(189, 126, 182);
+    color: rgb(245, 245, 241);
+}
+
+#btn-submit:hover{
+    background: linear-gradient(83deg, rgba(85, 97, 207, 1) 19%, rgba(189, 126, 182, 1)84%);
+    cursor: pointer;
 }
 
 .item-priorizada{
@@ -160,13 +185,19 @@ h1{
 /*Contenedor de la lista de tareas */
 
     /*Contenedor card setting general*/
+
+.tareasList-div{
+    background: transparent;
+}
+
+/*CARDS*/
 .contenedor-lista{
-    padding: 13px;
+    padding: 40px 90px;
 }
 
 .card-design{
     border-radius: 30px;
-    margin-bottom: 12px;  
+    margin-bottom: 12px; 
 }
 
 .contenedor-img-texto{
@@ -217,21 +248,15 @@ h1{
     width: 52px;
 }
 
-
-/* Stilo del tooltip */
-.custom-tooltip {
-  --bs-tooltip-bg: #460337;
-  --bs-tooltip-color: beige;
-  font-size: 12px;
-}
-
-/* Clases completado/pendiente tarjetas */
+/* CLASES TARJETAS*/
+    
     /* Pendiente*/
-
 .pendiente-task{
+
     .card-design{
-        border: black 2px solid;
-        background-color: rgba(189, 126, 182, 0.151); 
+        border: rgb(189, 126, 182) 2px solid;
+        box-shadow: rgb(238, 182, 231) 0px 0px 9px 1px;
+        background-color:rgb(237, 221, 235); 
     }
 
     .contenedor-img-texto i{
@@ -275,9 +300,13 @@ h1{
 
     /* Completada */
 .done-task{
+    .tarjeta-div-card{
+        background: white;
+    }
+
     .card-design{
         border: gray 2px solid;
-        background-color: rgba(128, 128, 128, 0.064); 
+        background-color: rgba(241, 235, 235, 0.952);  
     }
 
     .estado-task{
@@ -305,7 +334,7 @@ h1{
 
         /* Botones */
     .btn-card-lista-eliminar{
-        display: show;
+        display: block;
     } 
     
     .btn-card-lista-done{
@@ -332,12 +361,29 @@ h1{
 
 
 /* RESPONSIVE */
-    /* Tarjetas */
 
 @media (max-width: 768px){
 
+/* CONTENEDOR 1 [Tareas priorizadas y Form]*/
+    .hero-plan{
+        border-bottom: none
+    }
+    
+    .contenedor-desplegable-priorizadas{
+        margin: 4px;
+        padding: 1px;
+        border: none;
+        border-radius:6px;
+    }
+
+    .lista-priorizadas{
+        border: none;
+    }
+
+
+/* CONTENEDOR 2 [Tarjetas] */
     .contenedor-lista{
-        padding: 0;
+        padding: 30px 0px;
     }
 
     .card-design{
@@ -348,7 +394,7 @@ h1{
     }
 
     .contenedor-img-texto{
-        padding: 15px 15px 0px; 
+        padding: 5px 5px 0px; 
     }
 
     .btn-contenedor-lista{
