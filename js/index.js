@@ -1,9 +1,10 @@
-//Importar  clase
-const TaskManager = require('./taskManager.js')
+//INSTANCIA CLASE
+const taskManager = new TaskManager();
+
 
 //FORMULARIO
 //Validacion formulario
-/*
+
     //Captura de campos
     const userTitulo = document.querySelector('#inputTitle');
     const userPriorizacion = document.querySelector('#inputPriorizar');
@@ -135,10 +136,9 @@ formulario.addEventListener('submit', function(event){
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
         
 
-*/
+
 //TASKMANAGER.JS
-//Validar enlace con archivo
-const taskManager = new TaskManager();
+//Agregar tareas
 console.log(taskManager.task);
 
 taskManager.addTask(
