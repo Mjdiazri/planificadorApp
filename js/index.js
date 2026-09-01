@@ -124,14 +124,15 @@ const taskManager = new TaskManager();
     
     //Funcion crear Taskmanager
     function nuevaTask(){
-        let name = userTitulo.value;
+        let name = securityDatos(userTitulo.value);
         let prioritize = userPriorizacion.checked;
         let category = userCategoria.value;
         let dueDate = userFecha.value;
-        let description = userDescripcion.value;
+        let description = securityDatos(userDescripcion.value);
 
-        taskManager.addTask(name, prioritize, category, description, dueDate, "Pendiente");
-    }    
+        taskManager.addTask(name, prioritize, category, description, dueDate);
+        contenedorLista.insertAdjacentHTML('afterbegin',taskManager.createTaskHtml(taskManager))   
+    }   
 
     //Funcion cambio estado tarjeta
     function cambiarEstado(btn){
@@ -157,6 +158,17 @@ const taskManager = new TaskManager();
         }
         
     }
+
+    //Funcion seguridad
+    function securityDatos(texto) {
+    if (!texto) return '';
+    return texto
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
 
 
 
