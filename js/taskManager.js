@@ -5,7 +5,7 @@ class TaskManager{
         this.currentId = currentId;
     }
 
-    //Metodo
+    //Metodos
     addTask(name, prioritize, category, description, dueDate, status) {
         this.currentId ++;
         this.task.push(
@@ -18,8 +18,22 @@ class TaskManager{
                 dueDate : dueDate,
                 status : status
             }
-        )
-              
+        )       
     }
 
+    deleteTask(taskID){
+        const newTask = [];
+        for (let task of this.task) {
+            if(task.id !== taskID){
+                newTask.push(task);
+            }            
+        }
+
+        this.task = newTask;
+    }
+
+    createTaskHtml(){
+        
+
+    }
 }
