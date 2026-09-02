@@ -32,6 +32,23 @@ class TaskManager{
       parentTask.innerHTML = htmlItems;
     }
 
+    save(){
+      let datosTask = {
+        "datos" : this.task,
+        "contadorId": this.currentId
+      } 
+      localStorage.setItem("datosTask", JSON.stringify(datosTask))
+    }
+
+    load(){
+      let taskGuardados = localStorage.getItem('datosTask')
+      if(taskGuardados){
+        const datos = JSON.parse(taskGuardados);
+        this.task = datos.datos;
+        this.currentId = datos.contadorId;
+      }
+    }
+
     deleteTask(taskID){
         const newTask = [];
         for (let task of this.task) {

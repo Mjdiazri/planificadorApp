@@ -15,6 +15,10 @@ const taskManager = new TaskManager();
     //Variables globales
     const inputs = [userTitulo, userFecha, userDescripcion];
 
+//LOCALSTORAGE
+taskManager.load();   
+taskManager.render(contenedorLista); 
+
 //FORMULARIO
 
     //Eventos Formulario
@@ -133,7 +137,8 @@ const taskManager = new TaskManager();
         let imgCategory = escogerImg(category);
 
         taskManager.addTask(name, prioritize, category, description, dueDate, imgCategory);
-        taskManager.render(contenedorLista)
+        taskManager.save();
+        taskManager.render(contenedorLista);
   
     }   
 
@@ -149,6 +154,7 @@ const taskManager = new TaskManager();
             case 'done':
                 tarjeta.classList.replace('pendiente-task', 'done-task');
                 estadoCard.textContent = "Completada";
+                
                 break;
             case 'pendiente':
                 tarjeta.classList.replace('done-task', 'pendiente-task');
@@ -157,6 +163,8 @@ const taskManager = new TaskManager();
             case "eliminar":
                 tarjeta.remove();
                 taskManager.deleteTask(idCard);
+                taskManager.save()
+                taskManager.render(contenedorLista)
                 break;
             default:
                 return;
