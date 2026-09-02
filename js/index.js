@@ -132,10 +132,9 @@ const taskManager = new TaskManager();
         let description = securityDatos(userDescripcion.value);
         let imgCategory = escogerImg(category);
 
-        taskManager.addTask(name, prioritize, category, description, dueDate);
-
-        const tarea = taskManager.task[taskManager.task.length - 1];
-        contenedorLista.insertAdjacentHTML('afterbegin',taskManager.createTaskHtml(tarea))   
+        taskManager.addTask(name, prioritize, category, description, dueDate, imgCategory);
+        taskManager.render(contenedorLista)
+  
     }   
 
     //Funcion cambio estado tarjeta
@@ -144,6 +143,7 @@ const taskManager = new TaskManager();
         const tipo = btn.dataset.tipo
         const tarjeta = btn.closest('.tarjeta-div-card');
         const estadoCard = tarjeta.querySelector('.estado-task-small')
+        const idCard = Number(tarjeta.dataset.taskId);
 
         switch(tipo){
             case 'done':
@@ -156,11 +156,11 @@ const taskManager = new TaskManager();
                 break;
             case "eliminar":
                 tarjeta.remove();
+                taskManager.deleteTask(idCard);
                 break;
             default:
                 return;
         }
-        
     }
 
     //Funcion seguridad
@@ -191,7 +191,11 @@ const taskManager = new TaskManager();
                 return "fa-book i-study";                  
             
         }
-    } 
+    }
+    
+    function eliminarTask(){
+
+    }
 
 
 

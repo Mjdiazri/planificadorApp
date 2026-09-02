@@ -22,6 +22,16 @@ class TaskManager{
         ) 
     }
 
+    render(parentTask){
+      let htmlItems="";
+
+      for(let taskItem of this.task){
+        htmlItems += this.createTaskHtml(taskItem)
+      }
+
+      parentTask.innerHTML = htmlItems;
+    }
+
     deleteTask(taskID){
         const newTask = [];
         for (let task of this.task) {
@@ -121,7 +131,5 @@ class TaskManager{
         `
       return cardTask;  
     }
-
- 
     
 }
