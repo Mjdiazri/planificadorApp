@@ -147,28 +147,25 @@ taskManager.render(contenedorLista);
 
         const tipo = btn.dataset.tipo
         const tarjeta = btn.closest('.tarjeta-div-card');
-        const estadoCard = tarjeta.querySelector('.estado-task-small')
         const idCard = Number(tarjeta.dataset.taskId);
 
         switch(tipo){
             case 'done':
-                tarjeta.classList.replace('pendiente-task', 'done-task');
-                estadoCard.textContent = "Completada";
-                
+                taskManager.actualizarTask(idCard, "Completada")
                 break;
             case 'pendiente':
-                tarjeta.classList.replace('done-task', 'pendiente-task');
-                estadoCard.textContent = "Pendiente";
+                taskManager.actualizarTask(idCard, "Pendiente")
                 break;
             case "eliminar":
-                tarjeta.remove();
                 taskManager.deleteTask(idCard);
-                taskManager.save()
-                taskManager.render(contenedorLista)
-                break;
+                break;                
             default:
                 return;
         }
+
+        taskManager.save()
+        taskManager.render(contenedorLista)
+                
     }
 
     //Funcion seguridad

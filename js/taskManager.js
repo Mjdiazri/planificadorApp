@@ -60,9 +60,18 @@ class TaskManager{
         this.task = newTask;
     }
 
+    actualizarTask(id, estado){
+      for (let task of this.task) {
+            if(task.id === id){
+                task.status = estado 
+            } 
+        }     
+    }
+
     createTaskHtml(tarea){
+        const estadoClass = tarea.status ==="Completada" ? 'done-task' : 'pendiente-task';
         const cardTask = `
-         <div class="tarjeta-div-card pendiente-task" data-task-id="${tarea.id}">
+         <div class="tarjeta-div-card ${estadoClass}" data-task-id="${tarea.id}">
             <div class="row card-design g-0">
 
               <!-- Columna card tarea -->
