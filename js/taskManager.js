@@ -6,7 +6,7 @@ class TaskManager{
     }
 
     //Metodos
-    addTask(name, prioritize, category, description, dueDate) {
+    addTask(name, prioritize, category, description, dueDate, imgCategory) {
         this.currentId ++;
         this.task.push(
             { 
@@ -16,9 +16,10 @@ class TaskManager{
                 description : description,
                 category : category,
                 dueDate : dueDate,
-                status : 'Pendiente'
+                status : 'Pendiente',
+                imgCategory : imgCategory || "fa-volleyball"
             }
-        )       
+        ) 
     }
 
     deleteTask(taskID){
@@ -44,7 +45,7 @@ class TaskManager{
                 <div class="row g-0 contenedor-img-texto">
 
                   <div class="col-3 d-flex div-image">
-                    <i class="fa-solid fa-book i-study"></i>
+                    <i class="fa-solid ${tarea.imgCategory}"></i>
                   </div>
 
                   <div class="col-9">
@@ -118,6 +119,7 @@ class TaskManager{
 
           </div> 
         `
+      return cardTask;  
     }
 
  

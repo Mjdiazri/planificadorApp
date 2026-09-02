@@ -122,16 +122,20 @@ const taskManager = new TaskManager();
     }
 
     
-    //Funcion crear Taskmanager
+    //Funcion crear Taskmanager y renderizar
     function nuevaTask(){
+
         let name = securityDatos(userTitulo.value);
         let prioritize = userPriorizacion.checked;
         let category = userCategoria.value;
         let dueDate = userFecha.value;
         let description = securityDatos(userDescripcion.value);
+        let imgCategory = escogerImg(category);
 
         taskManager.addTask(name, prioritize, category, description, dueDate);
-        contenedorLista.insertAdjacentHTML('afterbegin',taskManager.createTaskHtml(taskManager))   
+
+        const tarea = taskManager.task[taskManager.task.length - 1];
+        contenedorLista.insertAdjacentHTML('afterbegin',taskManager.createTaskHtml(tarea))   
     }   
 
     //Funcion cambio estado tarjeta
@@ -168,7 +172,26 @@ const taskManager = new TaskManager();
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-}
+    }
+
+    //Funcion para seleccionar imagen
+    function escogerImg(categoria){
+        switch(categoria){
+            case 'Estudio':
+                return "fa-book i-study";
+            case 'Trabajo':
+                return "fa-briefcase";
+            case 'Familiar':
+                return "fa-house-chimney-user";
+            case 'Salud':
+                return "fa-heart-pulse";
+            case 'Entretenimiento':
+                return "fa-volleyball"; 
+            case 'default':
+                return "fa-book i-study";                  
+            
+        }
+    } 
 
 
 
