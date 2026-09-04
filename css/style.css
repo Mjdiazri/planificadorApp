@@ -158,10 +158,6 @@ h1{
 }
 
 
-
-
-
-
 /*ESTILO TARJETAS TAREAS */
     /*Contenedor general lista de tareas */
 .contenedor-seccion-lista{
@@ -358,6 +354,66 @@ h1{
         }
     }
 }
+/* FOOTER */
+.container-foot{
+    min-height: 4em;
+    background: #12000e;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+    /*Seccion 1: Redes */
+.div-icon{
+   display: flex;
+   justify-content: center;
+   align-items:center;
+}
+
+.fa-brands, .fa-envelope{
+    font-size: 15px;
+}
+
+.div-icon a, .div-techStack i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin:15px;
+    min-height: 35px;
+    min-width: 35px;
+    text-align: center;   
+    color: rgb(189, 126, 182);
+    border-radius: 50px;
+    background-color: beige;
+    text-decoration: none;
+}
+
+.div-icon a:hover, .div-techStack i:hover{
+    color:#12000e;
+    transform: scale(1.3); 
+    border: 2px #12000e solid;
+    box-shadow: 0px 0px 9px 1px rgb(189, 126, 182);
+}
+
+    /*Seccion 2: Propietario */
+.div-myInfo, .div-techStack{
+    color:rgb(189, 126, 182);
+}
+
+    /*Seccion 3: Stack tecnolocico */
+.div-techStack{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0px;
+    padding: 0px;
+}
+
+
 
 
 /* RESPONSIVE */
