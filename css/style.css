@@ -1,3 +1,7 @@
+:root{
+    --puple-main : #12000e;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -9,7 +13,7 @@
 .container-nav{
     padding-right:20px;
     min-height: 4em;
-    background: #12000e;
+    background: var(--puple-main);
 }
 
 .nav-enlace{
@@ -82,7 +86,7 @@ h1{
 
 .div-desplegable, .div-collapse-form{
     border: solid 1px beige;
-    background-color: #12000e;
+    background-color: var(--puple-main);
     border-radius:6px;
 }
 
@@ -372,7 +376,7 @@ h1{
    align-items:center;
 }
 
-.fa-brands, .fa-envelope{
+.fa-brands, .fa-envelope, .div-myInfo p {
     font-size: 15px;
 }
 
@@ -456,6 +460,11 @@ h1{
     .btn-contenedor-lista{
         padding:0px;
         gap: 15px;
+    }
+
+    /* Footer */
+    .container-foot{
+         flex-direction: column;
     }
 
 
