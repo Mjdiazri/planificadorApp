@@ -1,5 +1,7 @@
 :root{
     --puple-main : #12000e;
+    --puple-soft : rgb(189, 126, 182);
+    --hueso-white: rgb(245, 245, 241);
 }
 
 *{
@@ -17,7 +19,7 @@
 }
 
 .nav-enlace{
-    color: rgb(189, 126, 182);
+    color: var(--puple-soft);
 }
 
 .navbar-nav {
@@ -92,19 +94,19 @@ h1{
 
 .contenedor-desplegable-priorizadas, .div-form{
     margin: 6px;
-    border: solid 2px rgba(189, 126, 182, 1);
+    border: solid 2px --puple-soft;
     border-radius:6px;
 }
 
 .lista-priorizadas{
-    border: solid 2px rgba(189, 126, 182, 1);
+    border: solid 2px --puple-soft;
     border-radius:6px;
 }
 
 .btn-primary, .btn-form{
-    background: rgb(245, 245, 241);
+    background: var(--hueso-white);
     background-position:51% 0%;
-    border: 2px solid rgb(189, 126, 182);
+    border: 2px solid --puple-soft;
     width: 160px;
     color: purple;
     font-weight: 500;
@@ -113,8 +115,8 @@ h1{
 .btn-primary:hover, .btn-form:hover, #btn-submit{
     background: #BD7EB6;
     background: linear-gradient(83deg,rgba(189, 126, 182, 1) 19%, rgba(85, 97, 207, 1) 84%);
-    border: 1px solid rgb(189, 126, 182);
-    color: rgb(245, 245, 241);
+    border: 1px solid --puple-soft;
+    color:var(--hueso-white);
 }
 
 #btn-submit:hover{
@@ -254,7 +256,7 @@ h1{
 .pendiente-task{
 
     .card-design{
-        border: rgb(189, 126, 182) 2px solid;
+        border: --puple-soft 2px solid;
         box-shadow: rgb(238, 182, 231) 0px 0px 9px 1px;
         background-color:rgb(237, 221, 235); 
     }
@@ -342,7 +344,7 @@ h1{
     }
 
     .fa-calendar-check, .fa-trash, .fa-trash-can-arrow-up{
-        color: #12000e;
+        color: var(--puple-main);
         pointer-events: none;
     }
 
@@ -361,7 +363,7 @@ h1{
 /* FOOTER */
 .container-foot{
     min-height: 4em;
-    background: #12000e;
+    background: var(--puple-main);
 
     display: flex;
     flex-direction: row;
@@ -389,22 +391,22 @@ h1{
     min-height: 35px;
     min-width: 35px;
     text-align: center;   
-    color: rgb(189, 126, 182);
+    color: var(--puple-soft);
     border-radius: 50px;
     background-color: beige;
     text-decoration: none;
 }
 
 .div-icon a:hover, .div-techStack i:hover{
-    color:#12000e;
+    color:var(--puple-main);
     transform: scale(1.3); 
-    border: 2px #12000e solid;
-    box-shadow: 0px 0px 9px 1px rgb(189, 126, 182);
+    border: 2px --puple-main solid;
+    box-shadow: 0px 0px 9px 1px --puple-soft;
 }
 
     /*Seccion 2: Propietario */
 .div-myInfo, .div-techStack{
-    color:rgb(189, 126, 182);
+    color:var(--puple-soft);
 }
 
     /*Seccion 3: Stack tecnolocico */
