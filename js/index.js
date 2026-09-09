@@ -99,7 +99,8 @@ taskManager.render(contenedorLista);
             Swal.fire({
                 title: "Datos enviados!",
                 icon: "success",
-                draggable: true
+                draggable: true,
+                iconColor: '#852cde'
             });  
 
             //Task y reinicio
@@ -111,7 +112,8 @@ taskManager.render(contenedorLista);
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Por favor verifica los datos ingresados"
+                text: "Por favor verifica los datos ingresados",
+                iconColor: '#852cde'
             });
         }
     }
