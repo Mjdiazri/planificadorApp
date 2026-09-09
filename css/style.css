@@ -192,6 +192,27 @@ h1{
     background: transparent;
 }
 
+    /*Botones filtro*/
+.btn-contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}  
+
+.btn-filtro{
+    border: dotted 1px beige;
+    color: var(--puple-soft);
+}
+
+.btn-filtro:hover{
+    border: dotted 1.4px var(--puple-main);
+    background:  linear-gradient(83deg,rgba(189, 126, 182, 1) 19%, beige 84%);
+    color: var(--puple-main);
+    box-shadow: 0px 0px 3px 1px var(--hueso-white);
+}
+
 /*CARDS*/
 .contenedor-lista{
     padding: 40px 90px;
@@ -444,6 +465,7 @@ h1{
 
 
 /* CONTENEDOR 2 [Tarjetas] */
+
     .contenedor-lista{
         padding: 30px 0px;
     }
