@@ -33,19 +33,22 @@ class TaskManager{
     }
 
     save(){
-      let datosTask = {
-        "datos" : this.task,
-        "contadorId": this.currentId
-      } 
-      localStorage.setItem("datosTask", JSON.stringify(datosTask))
+      const taskJson = JSON.stringify(this.task);
+      localStorage.setItem('task', taskJson);
+
+      const currentId = String(this.currentId);
+      localStorage.setItem('currentId', currentId);      
     }
 
     load(){
-      let taskGuardados = localStorage.getItem('datosTask')
-      if(taskGuardados){
-        const datos = JSON.parse(taskGuardados);
-        this.task = datos.datos;
-        this.currentId = datos.contadorId;
+      const taskJson = localStorage.getItem('task')
+      if(taskJson){
+        this.task = JSON.parse(taskJson);
+      }
+
+      const currentId = localStorage.getItem('currentId')
+      if(currentId){
+        this.currentId = Number(currentId)
       }
     }
 
