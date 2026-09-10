@@ -13,7 +13,7 @@ const taskManager = new TaskManager();
     //Regex validacion
     const regexTexto = /^[a-z0-9ñáéíóúüÁÉÍÓÚÜ¿?¡!.,:;()'"_\s-]{5,}$/i;
     //Variables globales
-    const inputs = [userTitulo, userFecha, userDescripcion];
+    const inputs = [userTitulo, userDescripcion];
 
 //LOCALSTORAGE
 taskManager.load();   
@@ -53,6 +53,14 @@ taskManager.render(contenedorLista);
         return campoValue !== "Seleccionar..." ? true : false;         
     }
 
+    //Funcion validar fecha
+    function validarFecha(){
+        let campoValue = userFecha.value.trim();
+        let fechaHoy = Date()
+        console.log(campoValue)
+        console.log(fechaHoy)
+    }
+
     //Funcion agregar clases
     function agregarClaseOk(input){
         input.classList.add('okClass');
@@ -84,6 +92,9 @@ taskManager.render(contenedorLista);
                 agregarClaseError(inputs[i])
             }
         }
+
+        //Varificar fehca
+        validarFecha()
 
         // Verificar Categoria
         let estadoCategoria = validarCategoria();
@@ -206,5 +217,6 @@ taskManager.render(contenedorLista);
 
 
 //TASKMANAGER.JS
-console.log(taskManager)
+//console.log(taskManager)
+
 
