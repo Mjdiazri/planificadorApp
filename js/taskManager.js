@@ -22,7 +22,7 @@ class TaskManager{
         ) 
     }
 
-    render(parentTask, listTask){
+    render(parentTask, listTask = this.task){
       let htmlItems="";
 
       for(let taskItem of listTask){
@@ -71,16 +71,39 @@ class TaskManager{
         }     
     }
 
-    /*
     filtrarTask(tipoFiltro){
-      const filterTask = [];
+      let filterTask = [];
+      let fechaHoy = new Date().toISOString().split("T")[0]
 
-      switch(tipoFiltro){
+      switch(tipoFiltro){    
+        case 'priorizadas':
+          filterTask = this.task.filter(t => t.prioritize);
+          break;  
+        case 'pendientes':
+          filterTask = this.task.filter(t => t.status == 'Pendiente');
+          break; 
+        case 'completadas':
+          filterTask = this.task.filter(t => t.status == 'Completada');
+          break;
+        case 'vencidas':
+          filterTask = this.task.filter(t => t.dueDate < fechaHoy && t.status !== 'Completada');
+          break; 
+        case 'proximas':
+          let fechaPivote = new Date()
+          fechaPivote.setDate(fechaPivote.getDate()+15);
+          let limiteFecha = fechaPivote.toISOString().split("T")[0];
 
+          filterTask = this.task.filter(t => t.status === 'Pendiente' && t.dueDate > fechaHoy && t.dueDate < limiteFecha)
+          filterTask.sort((a,b) => new Date(a.dueDate) - new Date(b.dueDate))
+          break;
         case 'todas':
-          
+        default:
+          filterTask = this.task;
+          break;
       }
-    }*/
+
+      return filterTask;
+    }
 
     createTaskHtml(tarea){
         const estadoClass = tarea.status ==="Completada" ? 'done-task' : 'pendiente-task';

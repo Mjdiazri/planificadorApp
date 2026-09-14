@@ -19,7 +19,7 @@ const taskManager = new TaskManager();
 
 //LOCALSTORAGE
 taskManager.load();   
-taskManager.render(contenedorLista, taskManager.task); 
+taskManager.render(contenedorLista); 
 
 //FORMULARIO
 
@@ -148,7 +148,7 @@ taskManager.render(contenedorLista, taskManager.task);
 
         taskManager.addTask(name, prioritize, category, description, dueDate, imgCategory);
         taskManager.save();
-        taskManager.render(contenedorLista, taskManager.task);  
+        taskManager.render(contenedorLista);  
     }   
 
     //Funcion cambio estado tarjeta
@@ -173,7 +173,7 @@ taskManager.render(contenedorLista, taskManager.task);
         }
 
         taskManager.save()
-        taskManager.render(contenedorLista, taskManager.task)
+        taskManager.render(contenedorLista)
                 
     }
 
