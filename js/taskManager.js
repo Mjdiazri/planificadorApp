@@ -22,10 +22,10 @@ class TaskManager{
         ) 
     }
 
-    render(parentTask){
+    render(parentTask, listTask){
       let htmlItems="";
 
-      for(let taskItem of this.task){
+      for(let taskItem of listTask){
         htmlItems += this.createTaskHtml(taskItem)
       }
 
@@ -70,6 +70,17 @@ class TaskManager{
             } 
         }     
     }
+
+    /*
+    filtrarTask(tipoFiltro){
+      const filterTask = [];
+
+      switch(tipoFiltro){
+
+        case 'todas':
+          
+      }
+    }*/
 
     createTaskHtml(tarea){
         const estadoClass = tarea.status ==="Completada" ? 'done-task' : 'pendiente-task';

@@ -49,7 +49,6 @@
 body{
     min-height: 100vh;
     background: url(../img/fondo_body.png);
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 }
