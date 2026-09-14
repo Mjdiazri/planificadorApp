@@ -48,6 +48,7 @@
 
 body{
     background: url(../img/fondo_body.png);
+    background-repeat: no-repeat;
 }
     /*Hero*/
 
@@ -57,7 +58,8 @@ body{
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/fondo2.png');      
+    background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/backDesign.png'); 
+    background-repeat: no-repeat;    
     padding: 1rem;; 
     border-bottom: 0.1px dotted beige;
 }
