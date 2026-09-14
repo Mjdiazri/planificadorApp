@@ -47,7 +47,7 @@ taskManager.render(contenedorLista);
     const btn = evento.target.closest('button');
     if(!btn) return;
     const tipo = btn.dataset.tipo;
-    render(contenedorLista, taskManager.filtrarTask(tipo))
+    taskManager.render(contenedorLista, taskManager.filtrarTask(tipo))
    })
 
 
