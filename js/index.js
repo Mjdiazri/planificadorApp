@@ -10,6 +10,8 @@ const taskManager = new TaskManager();
     const btnSubmit = document.querySelector('#btn-submit');
     const formulario = document.querySelector('#form-tareas');
     const contenedorLista = document.querySelector('.contenedor-lista');
+    const btnContenedor = document.querySelector('#btn-contenedor')
+
     //Limitar fecha
     userFecha.setAttribute('min',limitarFecha());
     //Regex validacion
@@ -41,7 +43,14 @@ taskManager.render(contenedorLista);
    })
 
    //Eventos botones filtros
-   
+   btnContenedor.addEventListener('click', (evento)=>{
+    const btn = evento.target.closest('button');
+    if(!btn) return;
+    const tipo = btn.dataset.tipo;
+    render(contenedorLista, taskManager.filtrarTask(tipo))
+   })
+
+
 
 
 //FUNCIONES
@@ -208,6 +217,12 @@ taskManager.render(contenedorLista);
                 return "fa-book i-study";                  
             
         }
+    }
+
+    //Funcion para filtrar tareas
+    function filtrarTareas(btn){
+        
+        
     }
     
 
