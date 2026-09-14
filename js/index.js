@@ -40,6 +40,9 @@ taskManager.render(contenedorLista);
     cambiarEstado(btn);
    })
 
+   //Eventos botones filtros
+   
+
 
 //FUNCIONES
 
@@ -207,9 +210,6 @@ taskManager.render(contenedorLista);
         }
     }
     
-    function eliminarTask(){
-
-    }
 
 
 
