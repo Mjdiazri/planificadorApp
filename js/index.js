@@ -10,6 +10,8 @@ const taskManager = new TaskManager();
     const btnSubmit = document.querySelector('#btn-submit');
     const formulario = document.querySelector('#form-tareas');
     const contenedorLista = document.querySelector('.contenedor-lista');
+    //Limitar fecha
+    userFecha.setAttribute('min',limitarFecha());
     //Regex validacion
     const regexTexto = /^[a-z0-9ñáéíóúüÁÉÍÓÚÜ¿?¡!.,:;()'"_\s-]{5,}$/i;
     //Variables globales
@@ -41,6 +43,12 @@ taskManager.render(contenedorLista);
 
 //FUNCIONES
 
+     //Funcion limitar fecha
+    function limitarFecha(){
+        let fechaHoy = new Date().toISOString().split("T")[0];
+        return fechaHoy;
+    }
+
     //Funcion validar campos
     function validarCampo(input){
         let campoValue = input.value.trim();
@@ -51,14 +59,6 @@ taskManager.render(contenedorLista);
     function validarCategoria(){
         let campoValue = userCategoria.value.trim();
         return campoValue !== "Seleccionar..." ? true : false;         
-    }
-
-    //Funcion validar fecha
-    function validarFecha(){
-        let campoValue = userFecha.value.trim();
-        let fechaHoy = Date()
-        console.log(campoValue)
-        console.log(fechaHoy)
     }
 
     //Funcion agregar clases
@@ -92,9 +92,6 @@ taskManager.render(contenedorLista);
                 agregarClaseError(inputs[i])
             }
         }
-
-        //Varificar fehca
-        validarFecha()
 
         // Verificar Categoria
         let estadoCategoria = validarCategoria();

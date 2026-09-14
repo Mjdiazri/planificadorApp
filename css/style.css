@@ -47,9 +47,17 @@
 /*BODY*/
 
 body{
+    min-height: 100vh;
     background: url(../img/fondo_body.png);
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
 }
+
+main{
+    flex: 1;
+}
+
     /*Hero*/
 
 .hero-plan{
@@ -58,8 +66,7 @@ body{
     align-items: center;
     justify-content: center;
     background: #ffffff;
-    background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/backDesign.png'); 
-    background-repeat: no-repeat;    
+    background: linear-gradient(rgba(0, 0, 0,0.1), rgba(0, 0, 0, 0.1)), url('../img/backDesign.png');  
     padding: 1rem;; 
     border-bottom: 0.1px dotted beige;
 }
