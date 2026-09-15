@@ -22,11 +22,11 @@ class TaskManager{
         ) 
     }
 
-    render(parentTask, listTask = this.task){
+    render(parentTask, listTask = this.task, functionTask = this.createTaskHtml){
       let htmlItems="";
 
       for(let taskItem of listTask){
-        htmlItems += this.createTaskHtml(taskItem)
+        htmlItems += functionTask.call(this, taskItem)
       }
 
       parentTask.innerHTML = htmlItems;
@@ -103,6 +103,19 @@ class TaskManager{
       }
 
       return filterTask;
+    }
+
+    createPriorTaskHtml(tarea){
+      const lineTask = `
+        <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada" data-task-id="${tarea.id}>
+        ${tarea.name}
+          <div class="div-btn-priorizada">
+            <button type="button"  data-tipo="done" class="btn btn-outline-success btn-priorizadas-list"> ✔ 
+            </button>
+            <button type="button" data-tipo="eliminar" class="btn btn-outline-danger btn-priorizadas-list">❌
+            </button>
+          </div>                                                                     
+        </li>`
     }
 
     createTaskHtml(tarea){
