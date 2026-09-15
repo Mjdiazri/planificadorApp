@@ -77,13 +77,13 @@ class TaskManager{
 
       switch(tipoFiltro){    
         case 'priorizadas':
-          filterTask = this.task.filter(t => t.prioritize);
+          filterTask = this.task.filter(t => t.prioritize && t.status === 'Pendiente');
           break;  
         case 'pendientes':
-          filterTask = this.task.filter(t => t.status == 'Pendiente');
+          filterTask = this.task.filter(t => t.status === 'Pendiente');
           break; 
         case 'completadas':
-          filterTask = this.task.filter(t => t.status == 'Completada');
+          filterTask = this.task.filter(t => t.status === 'Completada');
           break;
         case 'vencidas':
           filterTask = this.task.filter(t => t.dueDate < fechaHoy && t.status !== 'Completada');

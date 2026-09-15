@@ -11,7 +11,7 @@ const taskManager = new TaskManager();
     const formulario = document.querySelector('#form-tareas');
     const contenedorLista = document.querySelector('.contenedor-lista');
     const btnContenedor = document.querySelector('#btn-contenedor')
-    const listaPriorizadas = document.querySelector('.lista-priorizadas`')
+    const listaPriorizadas = document.querySelector('.lista-priorizadas')
 
     //Limitar fecha
     userFecha.setAttribute('min',limitarFecha());
@@ -236,6 +236,7 @@ renderPriorizadas();
         const importantTask = taskManager.filtrarTask('priorizadas');
         taskManager.render(listaPriorizadas, importantTask, taskManager.createPriorTaskHtml)
     }
+
     
 
 
