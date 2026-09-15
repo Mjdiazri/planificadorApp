@@ -107,7 +107,7 @@ class TaskManager{
 
     createPriorTaskHtml(tarea){
       const lineTask = `
-        <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada" data-task-id="${tarea.id}>
+        <li class="list-group-item d-flex justify-content-between align-items-center  item-priorizada" data-task-id="${tarea.id}">
         ${tarea.name}
           <div class="div-btn-priorizada">
             <button type="button"  data-tipo="done" class="btn btn-outline-success btn-priorizadas-list"> ✔ 
@@ -116,6 +116,8 @@ class TaskManager{
             </button>
           </div>                                                                     
         </li>`
+
+      return lineTask  
     }
 
     createTaskHtml(tarea){

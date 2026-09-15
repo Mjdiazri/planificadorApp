@@ -11,6 +11,7 @@ const taskManager = new TaskManager();
     const formulario = document.querySelector('#form-tareas');
     const contenedorLista = document.querySelector('.contenedor-lista');
     const btnContenedor = document.querySelector('#btn-contenedor')
+    const listaPriorizadas = document.querySelector('.lista-priorizadas`')
 
     //Limitar fecha
     userFecha.setAttribute('min',limitarFecha());
@@ -22,6 +23,7 @@ const taskManager = new TaskManager();
 //LOCALSTORAGE
 taskManager.load();   
 taskManager.render(contenedorLista); 
+renderPriorizadas();
 
 //FORMULARIO
 
@@ -37,6 +39,13 @@ taskManager.render(contenedorLista);
 
     //Eventos botones tarjetas
    contenedorLista.addEventListener('click',(evento) => {
+    const btn = evento.target.closest('button');
+    if(!btn) return;
+    cambiarEstado(btn);
+   })
+
+   //Eventos botones lista priorizadas
+    listaPriorizadas.addEventListener('click',(evento) => {
     const btn = evento.target.closest('button');
     if(!btn) return;
     cambiarEstado(btn);
@@ -161,14 +170,17 @@ taskManager.render(contenedorLista);
         taskManager.addTask(name, prioritize, category, description, dueDate, imgCategory);
         taskManager.save();
         taskManager.render(contenedorLista);  
+        renderPriorizadas();
     }   
 
     //Funcion cambio estado tarjeta
     function cambiarEstado(btn){
 
         const tipo = btn.dataset.tipo
-        const tarjeta = btn.closest('.tarjeta-div-card');
-        const idCard = Number(tarjeta.dataset.taskId);
+        //const tarjeta = btn.closest('.tarjeta-div-card');
+        const elementoConID = btn.closest('[data-task-id]')
+        if(!elementoConID) return;
+        const idCard = Number(elementoConID.dataset.taskId);
 
         switch(tipo){
             case 'done':
@@ -186,7 +198,7 @@ taskManager.render(contenedorLista);
 
         taskManager.save()
         taskManager.render(contenedorLista)
-                
+        renderPriorizadas()                
     }
 
     //Funcion seguridad
@@ -220,9 +232,9 @@ taskManager.render(contenedorLista);
     }
 
     //Funcion para filtrar tareas
-    function filtrarTareas(btn){
-        
-        
+    function renderPriorizadas(){
+        const importantTask = taskManager.filtrarTask('priorizadas');
+        taskManager.render(listaPriorizadas, importantTask, taskManager.createPriorTaskHtml)
     }
     
 
