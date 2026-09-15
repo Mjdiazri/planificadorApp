@@ -25,10 +25,15 @@ class TaskManager{
     render(parentTask, listTask = this.task, functionTask = this.createTaskHtml){
       let htmlItems="";
 
-      for(let taskItem of listTask){
-        htmlItems += functionTask.call(this, taskItem)
+      if(listTask.length === 0){
+        htmlItems = `<li class="list-group-item text-center text-muted p-3">
+                        <em>No hay tareas para mostrar</em>
+                     </li>`;
+      } else {
+        for(let taskItem of listTask){
+          htmlItems += functionTask.call(this, taskItem)
+        }
       }
-
       parentTask.innerHTML = htmlItems;
     }
 
